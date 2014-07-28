@@ -17,4 +17,22 @@ class Triangle
     @side3
   end
 
+  def type
+    if (self.side1 + self.side2 < self.side3) ||
+       (self.side1 + self.side3 < self.side2) ||
+       (self.side3 + self.side2 < self.side1)
+      return "invalid"
+    elsif self.side1 == self.side2 && self.side1 == self.side3
+      return "equilateral"
+    elsif self.side1 == self.side2 && self.side1 != self.side3 ||
+          self.side1 == self.side3 && self.side1 != self.side2 ||
+          self.side2 == self.side3 && self.side2 != self.side1
+      return "isosceles"
+    elsif self.side1 != self.side2 && self.side1 != self.side3 &&
+          self.side2 != self.side3
+      return "scalene"
+    else
+      return "error"
+    end
+  end
 end
