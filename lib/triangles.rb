@@ -18,9 +18,9 @@ class Triangle
   end
 
   def type
-    if (self.side1 + self.side2 < self.side3) ||
-       (self.side1 + self.side3 < self.side2) ||
-       (self.side3 + self.side2 < self.side1)
+    if @side1 + @side2 < @side3 ||
+       @side1 + @side3 < @side2 ||
+       @side2 + @side3 < @side1
       return "invalid"
     elsif self.side1 == self.side2 && self.side1 == self.side3
       return "equilateral"
